@@ -42,7 +42,6 @@
     background: var(--darkgrn);
     opacity: .9;
     height: 20vh;
-    top: 0px;
     font-size: 1.8em;
     align-items: middle;
     border-radius: 15px;
@@ -55,7 +54,7 @@
   h1 {
     display:block;
     position: relative;
-    bottom: 15px;
+    bottom: 2vh;
     font-family: 'Roboto', sans-serif;
     font-size: 1.5em;
     color: white;
@@ -81,11 +80,11 @@
   
   
    .MainContainer {
-    grid-template-rows: 150px auto;
+    /* grid-template-rows: 150px auto; */
     display: grid;
-    background: url("./tree_bark.png");
+    /* background: url("./tree_bark.png");
     height: 80vh;
-  
+   */
     
   } 
   
@@ -177,7 +176,7 @@
   
   .BarChart {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(12, 1fr);
     grid-gap: 5px;
     align-items: end;
     position: absolute;
@@ -195,7 +194,7 @@
     display: block;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-    width: 134px;
+    width: 8vw;
     background-color: var(--darkgrn);
     color: white;
     padding-bottom: 50px;

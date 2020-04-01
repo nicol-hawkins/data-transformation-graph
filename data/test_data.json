@@ -1,0 +1,14 @@
+[
+    { "country": "Argentina", "percentage": 10.44 },
+    { "country": "Bolivia", "percentage": 51.62 },
+    { "country": "Brazil", "percentage": 59.51 },
+    { "country":"Chile", "percentage": 22.23 },
+    { "country":"Colombia", "percentage": 52.82 },
+    { "country":"Ecuador", "percentage": 52.10 },
+    { "country":"Guyana", "percentage": 84.20 },
+    { "country":"Paraguay", "percentage": 42.66 },
+    { "country":"Peru", "percentage": 58.44 },
+    { "country":"Suriname", "percentage": 98.40 },
+    { "country":"Uruguay", "percentage": 9.89 },
+    { "country":"Venezuela", "percentage": 53.85 }
+]
