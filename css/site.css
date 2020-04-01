@@ -80,21 +80,19 @@
   
   
    .MainContainer {
-    /* grid-template-rows: 150px auto; */
     display: grid;
-    /* background: url("./tree_bark.png");
-    height: 80vh;
-   */
+    height: 5vh;
+   
     
   } 
   
-   .CountryCheckbox {
+   .Country-Checkbox {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-column-gap: 5px;
     align-items: center;
     font-family: 'Roboto', sans-serif;
-    margin-top: -25px;
+    margin-bottom: -10vh;
     cursor: pointer;
     font-size: 21px;
     -webkit-user-select: none;
@@ -105,27 +103,27 @@
       
   }
   
-  .button-primary {
+  .Country-Button {
   background-color: rgb(255, 252, 252); 
   border-radius: 15px;
   color: rgba(73, 72, 72, 0.973);
   border-width: 1.5px;
-  margin-top: -65px;
+  margin-bottom: 10vh;
   padding: 5px 5px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 20px;
+  font-size: 2em;
   -webkit-transition-duration: 0.4s; 
   transition-duration: 0.4s;
   }
   
-  .button-primary:hover {
+  .Country-Button:hover {
   background-color: rgb(226, 200, 188);
   color: black;
   }
   
-  .button-primary:focus {
+  .Country-Button:focus {
   background-color: rgb(226, 200, 188);
   outline:none;
   

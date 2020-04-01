@@ -19,11 +19,31 @@ function render() {
                 chart.appendChild(bar);
 
             }
+            
 
         })
 
     }
     render();
+
+
+    function countryButtons(){
+        fetch("./data/year_data.json")
+        .then(response => response.json())
+        .then(data => {
+            let checkbox = document.querySelector('#checkbox');
+            for (let item in data) {
+                console.log('Country Buttons: ', data[item].country)
+                let button = document.createElement("button");
+                button.classList.add('Country-Button');
+                checkbox.appendChild(button);
+
+            }
+            
+        })
+      
+    }
+    countryButtons();
         
 
 
