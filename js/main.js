@@ -1,15 +1,4 @@
 
-        // let country = data.country;
-        // console.log(country);
-        // let years = data.years;
-
-        // for (let year in years) {
-        //     console.log(year);
-        // }
-
-        // for (let [key, value] of Object.entries(years)) {
-        //     console.log(`${key}: ${value}`);
-        //     }
 
         function render() {
             fetch("./data/year_data.json")
@@ -20,8 +9,7 @@
 
                     for (let item in data) {
                         console.log('Country: ', data[item].country)
-                        
-                       
+                        console.log('Years: ', data[item].years )   
                     }
 
                 })
