@@ -213,7 +213,7 @@
     background-color: var(--teal);
   }
   
-  .BarChart-bar:hover {
+  .BarChart-Bar:hover {
     transition: .5s;
     padding-bottom: 65px;
   }
