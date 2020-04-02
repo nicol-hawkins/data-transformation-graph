@@ -10,26 +10,26 @@ function render() {
             let chart = document.querySelector("#results");
            
             //loop through data to render bars for graph
-            for (let item in data) {
-                console.log('Country: ', data[item].country)
-                console.log('Data for Country: ', data[item].years)   
-                console.log("Years List: ,", Object.keys(data[item].years))
+            // for (let item in data) {
+            //     console.log('Country: ', data[item].country)
+            //     console.log('Data for Country: ', data[item].years)   
+            //     console.log("Years List: ,", Object.keys(data[item].years))
 
-               //get percent from the year 2010
-                let percent = data[item].years["2010"];
-                console.log("2010 percent: ", percent);
+            //    //get percent from the year 2010
+            //     let percent = data[item].years["2010"];
+            //     console.log("2010 percent: ", percent);
 
-                //create bar div; establish height and width using percent
-                let bar = document.createElement("div");
-                let height = percent;
-                // let width = percent;     //too wide and funky need to fix
-                bar.classList.add("BarChart-Bar");
-                bar.style.height = height + "%";
-                // bar.style.width = width + 'vw';  //too wide and funky
-                bar.innerHTML = data[item].country + '<br>' + percent + " %"
-                chart.appendChild(bar);
+            //     //create bar div; establish height and width using percent
+            //     let bar = document.createElement("div");
+            //     let height = percent;
+            //     // let width = percent;     //too wide and funky need to fix
+            //     bar.classList.add("BarChart-Bar");
+            //     bar.style.height = height + "%";
+            //     // bar.style.width = width + 'vw';  //too wide and funky
+            //     bar.innerHTML = data[item].country + '<br>' + percent + " %"
+            //     chart.appendChild(bar);
 
-            }
+            // }
         })
 
     }
@@ -50,6 +50,7 @@ function render() {
                 let button = document.createElement("button");
                 button.classList.add('Country-Button');
                 button.innerHTML = data[item].country;
+                button.onclick = chooseCountry; 
                 checkbox.appendChild(button);
 
             }          
@@ -57,6 +58,41 @@ function render() {
            
     }
     countryButtons();
+
+    function chooseCountry() {
+        fetch("./data/year_data.json")
+        .then(response => response.json())
+        .then(data => {
+            console.log('Button clicked');
+            let chart = document.querySelector("#results");
+
+
+            for (let item in data) {
+                // console.log('Country: ', data[item].country)
+                let country = data[item].country
+                console.log(country);
+
+               //get percent from the year 2010
+                let percent = data[item].years["2010"];
+                console.log("2010 percent: ", percent);
+
+                // //create bar div; establish height and width using percent
+                let bar = document.createElement("div");
+                let height = percent;
+                // let width = percent;     //too wide and funky need to fix
+                bar.classList.add("BarChart-Bar");
+                bar.style.height = height + "%";
+                // bar.style.width = width + 'vw';  //too wide and funky
+                bar.innerHTML = data[item].country + '<br>' + percent + " %"
+                chart.appendChild(bar);
+
+            }
+
+        })
+
+       
+    }
+    // chooseCountry();
 
 
     // Function to gather year input from user
