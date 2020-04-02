@@ -65,9 +65,12 @@ function render() {
         .then(data => {
             console.log('Button clicked');
             let chart = document.querySelector("#results");
+            chart.innerHTML= ''
 
 
             for (let item in data) {
+
+
                 // console.log('Country: ', data[item].country)
                 let country = data[item].country
                 console.log(country);
