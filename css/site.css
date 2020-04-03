@@ -203,7 +203,10 @@
     overflow: hidden;
     transition: height .5s,
                 padding .5s,
-                min-height .5s;           
+                min-height .5s;   
+                
+                
+        
   
   }
   
@@ -216,3 +219,10 @@
     padding-bottom: 65px;
   }
   
+
+  .BarChart-Bar--collapsed {
+    height: 0 !important;
+    min-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+  }

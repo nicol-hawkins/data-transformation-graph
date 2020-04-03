@@ -7,36 +7,36 @@ function render() {
             console.log(data);
 
             //create variable for bargraph
-            let chart = document.querySelector("#results");
-           
-            //loop through data to render bars for graph
-            // for (let item in data) {
-            //     console.log('Country: ', data[item].country)
-            //     console.log('Data for Country: ', data[item].years)   
-            //     console.log("Years List: ,", Object.keys(data[item].years))
+            // let chart = document.querySelector("#results");
+            // chart.innerHTML = '';
+            
+            // for (let item of data) {
 
-            //    //get percent from the year 2010
-            //     let percent = data[item].years["2010"];
-            //     console.log("2010 percent: ", percent);
-
-            //     //create bar div; establish height and width using percent
+              
             //     let bar = document.createElement("div");
+
+             
+            //     let percent = data[item].years["2010"];
             //     let height = percent;
-            //     // let width = percent;     //too wide and funky need to fix
-            //     bar.classList.add("BarChart-Bar");
+            //     console.log("2010 percent: ", percent);
             //     bar.style.height = height + "%";
+            //     bar.classList.add("BarChart-Bar");
+       
+            //     // let width = percent;     //too wide and funky need to fix
             //     // bar.style.width = width + 'vw';  //too wide and funky
+
             //     bar.innerHTML = data[item].country + '<br>' + percent + " %"
             //     chart.appendChild(bar);
 
             // }
+        
         })
 
     }
     render();
 
     // Function for generating country buttons 
-    function countryButtons(){
+    function countryButtons(data){
         fetch("./data/year_data.json")
         .then(response => response.json())
         .then(data => {
@@ -63,15 +63,12 @@ function render() {
         fetch("./data/year_data.json")
         .then(response => response.json())
         .then(data => {
-            console.log('Button clicked');
+
             let chart = document.querySelector("#results");
             chart.innerHTML= ''
 
+           for (let item in data) {
 
-            for (let item in data) {
-
-
-                // console.log('Country: ', data[item].country)
                 let country = data[item].country
                 console.log(country);
 
@@ -84,6 +81,7 @@ function render() {
                 let height = percent;
                 // let width = percent;     //too wide and funky need to fix
                 bar.classList.add("BarChart-Bar");
+                bar.id = "test";
                 bar.style.height = height + "%";
                 // bar.style.width = width + 'vw';  //too wide and funky
                 bar.innerHTML = data[item].country + '<br>' + percent + " %"
@@ -95,7 +93,9 @@ function render() {
 
        
     }
+    render();
     // chooseCountry();
+
 
 
     // Function to gather year input from user
@@ -111,7 +111,7 @@ function render() {
 
                 //Loop through years (**still looping thru too many years objects**)
                 for (let item in data) {
-                    console.log("Years List: ,", Object.keys(data[item].years))      
+                    console.log("Years List: ,", data[item].years)      
                     let year_choice = document.createElement("option");
                     year_choice.classList.add('year-choice');
                     year_choice.innerHTML = Object.keys(data[item].years)
